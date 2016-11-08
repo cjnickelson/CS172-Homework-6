@@ -18,5 +18,13 @@
     <ClCompile Include="Exercises 01, 02, 03.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CircleWithConstantMemberFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CircleWithConstantMemberFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
