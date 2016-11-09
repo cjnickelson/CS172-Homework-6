@@ -20,18 +20,18 @@ public:
 	string toString();
 	double getRealPart();
 	double getImaginaryPart();
-	Complex operator+=(Complex);
-	Complex operator-=(Complex);
-	Complex operator*=(Complex);
-	Complex operator/=(Complex);
-	double operator[](Complex);
-	friend ostream& operator << (ostream&, Complex);
-	friend ostream& operator >> (ostream&, Complex);
-	Complex operator++(int);
-	Complex operator--(int);
+	void operator+=(Complex);
+	void operator-=(Complex);
+	void operator*=(Complex);
+	void operator/=(Complex);
+	double operator[](int);
+	friend ostream& operator << (ostream& str, Complex c)
+	{
+		str << c.toString();
+		return str;
+	}
+	Complex operator+(Complex);
+	Complex operator-(Complex c);
+	Complex operator*(Complex c);
+	Complex operator/(Complex c);
 };
-
-Complex operator+(Complex);
-Complex operator-(Complex);
-Complex operator*(Complex);
-Complex operator/(Complex);

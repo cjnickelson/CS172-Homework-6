@@ -4,6 +4,7 @@
 #include<fstream>
 #include<ctime>
 #include<string>
+#include"Complex.h"
 
 using namespace std;
 
@@ -13,6 +14,18 @@ void evaluateBabyNames(string year, char gender, string name);
 
 int main()
 {
+	double a, b, c, d;
+	cout << "Enter the first complex number (real part then imaginary): ";
+	cin >> a >> b;
+	cout << endl<< "Enter the second complex number (real part then imaginary): ";
+	cin >> c >> d;
+	Complex c1(a, b), c2(c, d);
+	cout << c1 << " + " << c2 << " = " << c1 + c2 << endl;
+	cout << c1 << " - " << c2 << " = " << c1 - c2 << endl;
+	cout << c1 << " * " << c2 << " = " << c1 * c2 << endl;
+	cout << c1 << " / " << c2 << " = " << c1 / c2 << endl;
+	cout << "|" << c1 << "|" << " = " << c1.abs();
+
 	// exercise 3
 
 	// initialize strings for the year and name for baby name analysis

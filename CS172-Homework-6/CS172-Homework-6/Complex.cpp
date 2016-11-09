@@ -1,4 +1,5 @@
 #include"Complex.h"
+#include<iomanip>
 
 Complex::Complex()
 {
@@ -46,7 +47,12 @@ double Complex::abs()
 }
 string Complex::toString()
 {
-	return string(real << " + " << imaginary << "i");
+	string value = "(";
+	value += to_string(real);
+	value += " + ";
+	value += to_string(imaginary);
+	value += "i)";
+	return value;
 }
 double Complex::getRealPart()
 {
@@ -56,39 +62,49 @@ double Complex::getImaginaryPart()
 {
 	return imaginary;
 }
-Complex Complex::operator+=(Complex c)
+void Complex::operator+=(Complex c)
 {
-
+	real += c.getRealPart();
+	imaginary += c.getImaginaryPart();
 }
-Complex Complex::operator-=(Complex c)
+void Complex::operator-=(Complex c)
 {
-
+	real -= c.getRealPart();
+	imaginary -= c.getImaginaryPart();
 }
-Complex Complex::operator*=(Complex c)
+void Complex::operator*=(Complex c)
 {
-
+	real = real * c.getRealPart() - imaginary*c.getImaginaryPart();
+	imaginary = imaginary * c.getRealPart() + real * c.getImaginaryPart();
 }
-Complex Complex::operator/=(Complex c)
+void Complex::operator/=(Complex n)
 {
-
+	double a = real, b = imaginary, c = n.getRealPart(), d = n.getImaginaryPart();
+	real = (a*c + b*d) / (c*c + d*d);
+	imaginary = (b*c - a*d) / (c*c + d*d);
 }
-double Complex::operator[](Complex c)
+double Complex::operator[](int i)
 {
-
+	if (i == 0)
+		return real;
+	if (i == 1)
+		return imaginary;
+	else cout << "Invalid index value." << endl; return 0;
 }
-ostream& Complex::operator<<(ostream&, Complex c)
-{
 
+Complex Complex::operator+(Complex c)
+{
+	return this->add(c);
 }
-ostream& Complex::operator >> (ostream&, Complex c)
+Complex Complex::operator-(Complex c)
 {
-
+	return this->subtract(c);
 }
-Complex Complex::operator++(int r)
+Complex Complex::operator*(Complex c)
 {
-
+	return this->multiply(c);
 }
-Complex Complex::operator--(int r)
+Complex Complex::operator/(Complex c)
 {
-
+	return this->divide(c);
 }
