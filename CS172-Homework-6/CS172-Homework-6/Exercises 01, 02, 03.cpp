@@ -14,17 +14,25 @@ void evaluateBabyNames(string year, char gender, string name);
 
 int main()
 {
+	// exercise 5
+	
+	// initialize four doubles to recieve the input from the user
 	double a, b, c, d;
 	cout << "Enter the first complex number (real part then imaginary): ";
+	// get the first complex number
 	cin >> a >> b;
 	cout << endl<< "Enter the second complex number (real part then imaginary): ";
+	// get the second complex number
 	cin >> c >> d;
+	// initialize two complex numbers with these parameters
 	Complex c1(a, b), c2(c, d);
+	// display the resaults of the complex addition, subtraction, multiplication, and division using the overloaded operators + - * / and <<
 	cout << c1 << " + " << c2 << " = " << c1 + c2 << endl;
 	cout << c1 << " - " << c2 << " = " << c1 - c2 << endl;
 	cout << c1 << " * " << c2 << " = " << c1 * c2 << endl;
 	cout << c1 << " / " << c2 << " = " << c1 / c2 << endl;
-	cout << "|" << c1 << "|" << " = " << c1.abs();
+	// display the absolute value of the first complex number
+	cout << "|" << c1 << "|" << " = " << c1.abs() << endl;
 
 	// exercise 3
 
